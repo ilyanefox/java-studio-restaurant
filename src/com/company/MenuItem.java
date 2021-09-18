@@ -1,15 +1,18 @@
 package com.company;
 
-public class MenuItems {
+import java.util.Date;
+
+public class MenuItem {
     private String description;
     private String category;
     private double price;
-    private boolean isNew;
+    private Boolean isNew;
 
-    public MenuItems(double price, String category, String description) {
-        this.price = price;
-        this.category = category;
+    public MenuItem(String description, String category, double price, boolean isNew) {
         this.description = description;
+        this.category = category;
+        this.price = price;
+        this.isNew = true;
     }
 
     public String getDescription() {
@@ -36,12 +39,10 @@ public class MenuItems {
         this.price = price;
     }
 
-    public boolean isNew() {
+    public Boolean getIsNew() {
         return isNew;
     }
 
-    public void setNew(boolean aNew) {
-        isNew = aNew;
-    }
+
 }
 
