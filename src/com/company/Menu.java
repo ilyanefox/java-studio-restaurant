@@ -4,20 +4,45 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Menu {
-    private ArrayList<MenuItem> item;
-    private Date lastUpdated = new Date();
+    private ArrayList<MenuItem> items;
+    private Date lastUpdated;
 
-    public Menu(ArrayList<MenuItem> item, Date lastUpdated) {
-        this.item = item;
+
+    public Menu(ArrayList<MenuItem> items, Date lastUpdated) {
+        this.items = items;
         this.lastUpdated = lastUpdated;
     }
 
-    public ArrayList<MenuItem> getItem() {
-        return item;
+    public ArrayList<MenuItem> addItem(MenuItem menuItem) {
+        this.items.add(menuItem);
+        return this.items;
     }
 
-    public void setItems(ArrayList<MenuItem> item) {
-        this.item = item;
+    public void removeItem(MenuItem menuItem) {
+        this.items.remove(menuItem);
+    }
+
+    public MenuItem printItem(MenuItem menuItem) {
+        return menuItem;
+    }
+
+    public void printMenu() {
+
+        for (MenuItem item : items) {
+            System.out.println(item.getDescription() + " $" + item.getPrice());
+        }
+    }
+
+    //Not sure about this. How do I get the most recent date that something was added?
+
+
+
+    public ArrayList<MenuItem> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<MenuItem> items) {
+        this.items = items;
     }
 
     public Date getLastUpdated() {
@@ -27,4 +52,5 @@ public class Menu {
     public void setLastUpdated(Date lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
+
 }
